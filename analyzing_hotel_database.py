@@ -9,7 +9,7 @@ first_ten_row = cur.execute('''SELECT * FROM booking_summary''').fetchmany(10) #
 bra = cur.execute('''SELECT * FROM booking_summary WHERE country = 'BRA';''').fetchall() #GETTING BRAZILIAN CUSTOMERS
 print(bra)
 #print(type(bra))
-#print(len(bra))
+#print(len(bra)) JUST CHECKING
 
 cur.execute('''CREATE TABLE IF NOT EXISTS bra_customers (
                 num INTEGER,
@@ -42,7 +42,7 @@ for i in lead_time_can:
   average = total/len(lead_time_can)
 
 print(average)
-print("-----")
+
 lead_time_not_can = cur.execute('''SELECT lead_time FROM bra_customers WHERE is_cancelled = 0;''').fetchall()
 
 #print(lead_time_not_can)
